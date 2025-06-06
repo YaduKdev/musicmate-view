@@ -1,15 +1,16 @@
 import { Route, Routes } from "react-router-dom";
+import { AuthenticateWithRedirectCallback } from "@clerk/clerk-react";
 
 // Pages
 import Home from "./pages/home/Home";
 import AuthCallback from "./pages/authCallback/AuthCallback";
-import { AuthenticateWithRedirectCallback } from "@clerk/clerk-react";
+import MainLayout from "./layout/MainLayout";
+import Chat from "./pages/chat/Chat";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route
           path="/sso-callback"
           element={
@@ -19,6 +20,10 @@ function App() {
           }
         />
         <Route path="/auth-callback" element={<AuthCallback />} />
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/chat" element={<Chat />} />
+        </Route>
       </Routes>
     </>
   );
