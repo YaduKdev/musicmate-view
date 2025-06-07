@@ -1,11 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import { AuthenticateWithRedirectCallback } from "@clerk/clerk-react";
 
-// Pages
+// Pages and Layouts
 import Home from "./pages/home/Home";
 import AuthCallback from "./pages/authCallback/AuthCallback";
 import MainLayout from "./layout/MainLayout";
 import Chat from "./pages/chat/Chat";
+import Albums from "./pages/albums/Albums";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/chat" element={<Chat />} />
+          <Route path="/albums/:id" element={<Albums />} />
         </Route>
       </Routes>
     </>
