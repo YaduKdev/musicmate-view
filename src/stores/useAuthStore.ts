@@ -2,28 +2,33 @@ import { apiCaller } from "@/lib/axios";
 import { create } from "zustand";
 
 interface AuthStore {
-  users: any[];
+  isAdmin: boolean;
   isLoading: boolean;
   error: string | null;
 
-  fetchUsers: () => Promise<void>;
+  verifyAdmin: () => Promise<void>;
+  reset: () => void;
 }
 
 export const useAuthStore = create<AuthStore>((set) => ({
-  users: [],
+  isAdmin: false,
   isLoading: false,
   error: null,
 
-  fetchUsers: async () => {
+  verifyAdmin: async () => {
     set({ isLoading: true, error: null });
 
     try {
-      const response = await apiCaller.get("/users");
-      set({ users: response.data });
+      const response = await apiCaller.get("/admin/verify");
+      set({ isAdmin: response.data.admin });
     } catch (error: any) {
-      set({ error: error.response.data.message });
+      set({ isAdmin: false, error: error.response.data.message });
     } finally {
       set({ isLoading: false });
     }
+  },
+
+  reset: () => {
+    set({ isAdmin: false, isLoading: false, error: null });
   },
 }));
