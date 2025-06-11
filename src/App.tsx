@@ -7,6 +7,8 @@ import AuthCallback from "./pages/authCallback/AuthCallback";
 import MainLayout from "./layout/MainLayout";
 import Chat from "./pages/chat/Chat";
 import Albums from "./pages/albums/Albums";
+import Admin from "./pages/admin/Admin";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -21,12 +23,14 @@ function App() {
           }
         />
         <Route path="/auth-callback" element={<AuthCallback />} />
+        <Route path="/admin" element={<Admin />} />
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/albums/:id" element={<Albums />} />
         </Route>
       </Routes>
+      <Toaster />
     </>
   );
 }
