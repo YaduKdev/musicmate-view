@@ -10,9 +10,12 @@ const TopBar = () => {
   const { isAdmin } = useAuthStore();
   return (
     <div className="flex items-center justify-between p-4 sticky top-0 bg-zinc-900/75 backdrop-blur-md z-10">
-      <div className="flex gap-2 items-center">
+      <div className="hidden sm:flex gap-2 items-center">
         <img src="/logo.png" className="size-8" alt="Music Mate Logo" />
         Music Mate
+      </div>
+      <div className="flex sm:hidden gap-2 items-center">
+        <img src="/logo.png" className="size-8" alt="Music Mate Logo" />
       </div>
       <div className="flex items-center gap-4">
         {isAdmin && (
@@ -21,7 +24,7 @@ const TopBar = () => {
             className={cn(buttonVariants({ variant: "outline" }))}
           >
             <LayoutDashboardIcon className="size-4 mr-2" />
-            Admin Dashboard
+            <span className="hidden sm:flex">Admin Dashboard</span>
           </Link>
         )}
 

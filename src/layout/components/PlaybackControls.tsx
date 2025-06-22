@@ -156,25 +156,25 @@ const PlaybackControls = () => {
         </div>
 
         {/* volume */}
-        <div className="hidden sm:flex items-center gap-4 min-w-[180px] w-[30%] justify-end">
+        <div className="hidden sm:flex items-center gap-4 min-w-[150px] w-[30%] justify-end">
           <Button
             size="icon"
             variant="ghost"
-            className="hover:text-white text-zinc-400 cursor-pointer"
+            className="hidden lg:flex hover:text-white text-zinc-400 cursor-pointer"
           >
             <Mic2 className="h-4 w-4" />
           </Button>
           <Button
             size="icon"
             variant="ghost"
-            className="hover:text-white text-zinc-400 cursor-pointer"
+            className="hidden lg:flex hover:text-white text-zinc-400 cursor-pointer"
           >
             <ListMusic className="h-4 w-4" />
           </Button>
           <Button
             size="icon"
             variant="ghost"
-            className="hover:text-white text-zinc-400 cursor-pointer"
+            className="hidden lg:flex hover:text-white text-zinc-400 cursor-pointer"
           >
             <Laptop2 className="h-4 w-4" />
           </Button>
@@ -187,9 +187,9 @@ const PlaybackControls = () => {
               onClick={handleVolumeButtonClick}
             >
               {volume === 0 ? (
-                <VolumeX className="h-4 w-4" />
+                <VolumeX className="size-4" />
               ) : (
-                <Volume1 className="h-4 w-4" />
+                <Volume1 className="size-4" />
               )}
             </Button>
 
@@ -197,7 +197,7 @@ const PlaybackControls = () => {
               value={[volume]}
               max={100}
               step={1}
-              className="w-24 hover:cursor-pointer active:cursor-grabbing"
+              className="hidden md:flex w-24 hover:cursor-pointer active:cursor-grabbing"
               onValueChange={(value) => {
                 setVolume(value[0]);
                 if (audioRef.current) {

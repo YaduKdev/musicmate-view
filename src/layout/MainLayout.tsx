@@ -46,7 +46,9 @@ const MainLayout = () => {
           <Outlet />
         </ResizablePanel>
 
-        <ResizableHandle className="w-2 bg-black rounded-lg transition-colors" />
+        {!isMobile && (
+          <ResizableHandle className="w-2 bg-black rounded-lg transition-colors" />
+        )}
 
         {/* Right Layout */}
         {!isMobile && (

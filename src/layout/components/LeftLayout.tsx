@@ -73,7 +73,7 @@ const LeftLayout = () => {
                   <img
                     src={album.imageUrl}
                     alt="Playlist Image"
-                    className="size-12 rounded-md flex-shrink-0 object-cover"
+                    className="size-7 sm:size-12 rounded-md flex-shrink-0 object-cover"
                   />
                   <div className="flex-1 min-w-0 hidden md:block">
                     <p className="font-medium truncate">{album.title}</p>

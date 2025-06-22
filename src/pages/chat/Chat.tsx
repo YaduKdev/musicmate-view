@@ -28,8 +28,6 @@ const Chat = () => {
     if (selectedUser) fetchMessages(selectedUser.clerkId);
   }, [selectedUser, fetchMessages]);
 
-  console.log({ messages });
-
   const NoConversationPlaceholder = () => (
     <div className="flex flex-col items-center justify-center h-full space-y-6">
       <img
@@ -52,7 +50,7 @@ const Chat = () => {
     <main className="h-full rounded-lg bg-gradient-to-b from-zinc-800 to-zinc-900 overflow-hidden">
       <TopBar />
 
-      <div className="grid lg:grid-cols-[300px_1fr] grid-cols-[80px_1fr] h-[calc(100vh-180px)]">
+      <div className="grid grid-cols-[40px_1fr] sm:grid-cols-[80px_1fr] lg:grid-cols-[300px_1fr] h-[calc(100vh-180px)]">
         <UsersList />
 
         {/* chat message */}

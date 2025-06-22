@@ -10,13 +10,15 @@ export default function NotFoundPage() {
       <div className="text-center space-y-8 px-4">
         {/* Large animated musical note */}
         <div className="flex justify-center animate-bounce">
-          <Music2 className="h-24 w-24 text-cyan-500" />
+          <Music2 className="size-18 md:size-24 text-cyan-500" />
         </div>
 
         {/* Error message */}
         <div className="space-y-4">
-          <h1 className="text-7xl font-bold text-white">404</h1>
-          <h2 className="text-2xl font-semibold text-white">Page not found</h2>
+          <h1 className="text-5xl md:text-7xl font-bold text-white">404</h1>
+          <h2 className="text-xl md:text-2xl font-semibold text-white">
+            Page not found
+          </h2>
           <p className="text-neutral-400 max-w-md mx-auto">
             Looks like this track got lost in the shuffle. Let's get you back to
             the music.

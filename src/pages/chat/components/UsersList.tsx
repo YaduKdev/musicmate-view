@@ -11,7 +11,7 @@ const UsersList = () => {
     <div className="border-r border-zinc-800">
       <div className="flex flex-col h-full">
         <ScrollArea className="h-[calc(100vh-280px)]">
-          <div className="space-y-2 p-4">
+          <div className="space-y-2 p-2 sm:p-4">
             {isLoading ? (
               <UsersListSkeleton />
             ) : (
@@ -19,7 +19,7 @@ const UsersList = () => {
                 <div
                   key={user._id}
                   onClick={() => setSelectedUser(user)}
-                  className={`flex items-center justify-center lg:justify-start gap-3 p-3 
+                  className={`flex items-center justify-center lg:justify-start gap-3 sm:p-3 
 										rounded-lg cursor-pointer transition-colors
                     ${
                       selectedUser?.clerkId === user.clerkId
@@ -28,13 +28,13 @@ const UsersList = () => {
                     }`}
                 >
                   <div className="relative">
-                    <Avatar className="size-8 md:size-12">
+                    <Avatar className="size-5 sm:size-8 md:size-12">
                       <AvatarImage src={user.imageUrl} />
                       <AvatarFallback>{user.firstName[0]}</AvatarFallback>
                     </Avatar>
                     {/* online indicator */}
                     <div
-                      className={`absolute bottom-0 right-0 h-3 w-3 rounded-full ring-2 ring-zinc-900
+                      className={`absolute bottom-0 right-0 size-1 sm:size-3 rounded-full ring-2 ring-zinc-900
                         ${
                           onlineUsers.has(user.clerkId)
                             ? "bg-green-500"

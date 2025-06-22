@@ -20,9 +20,11 @@ const SignIOAuthButtons = () => {
     <Button
       onClick={signInWithGoogle}
       variant={"secondary"}
-      className="w-full text-white border-zinc-200 h-11"
+      className="w-full text-white border-zinc-200 h-9 sm:h-11 flex justify-center items-center"
     >
-      Continue With Google
+      <img src="/google.png" alt="Google Logo" className="size-4 sm:size-5" />
+      <span className="hidden sm:flex">Continue With Google</span>
+      <span className="sm:hidden">Sign In</span>
     </Button>
   );
 };
